@@ -1,0 +1,1 @@
+python crawl_detail.py --chrome_driver_path ... --sample_size 1000 --number_of_threads 25
