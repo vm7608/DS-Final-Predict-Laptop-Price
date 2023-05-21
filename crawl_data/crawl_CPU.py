@@ -4,7 +4,21 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 import warnings
+import argparse
+from tqdm import tqdm
+import os
 warnings.filterwarnings('ignore')
+
+# parser = argparse.ArgumentParser()
+
+# parser.add_argument('--chrome_driver_path', type=str, default=os.path.join(os.path.expanduser("~"), "chromedriver", "113", "chromedriver"), help='path to chrome driver')
+# parser.add_argument('--sample_size', type=int, default=10000, help='number of sample to crawl')
+# parser.add_argument('--input_file_path', type=str, default='laptop_detail.csv', help='path to file input that contain basic data')
+
+# args = parser.parse_args()
+
+# bar = tqdm(total=args.sample_size)
+
 
 # Khởi tạo trình điều khiển cho Chrome
 driver = webdriver.Chrome('chromedriver.exe')
@@ -40,7 +54,7 @@ for tr in tbody.find_all(
 
 
 driver.quit()
-df.to_csv('cpuben.csv', index=False)
-print("Done")
+df.to_csv('raw/cpuben.csv', index=False)
+print("Crawl CPU Done")
 # print df size
-print(df.shape)
+print("Data shape:", df.shape)

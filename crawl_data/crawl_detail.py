@@ -10,15 +10,19 @@ import os
 from threading import Thread, Barrier
 import logging
 import argparse
+from tqdm import tqdm
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--chrome_driver_path', type=str, default=os.path.join(os.path.expanduser("~"), "chromedriver", "113", "chromedriver"), help='path to chrome driver')
 parser.add_argument('--sample_size', type=int, default=10000, help='number of sample to crawl')
-parser.add_argument('--number_of_threads', type=int, default=20, help='number of threads to crawl')
+parser.add_argument('--number_of_threads', type=int, default=10, help='number of threads to crawl')
+parser.add_argument('--input_file_path', type=str, default='raw/laptop_basic.csv', help='path to file input that contain basic data')
 
 args = parser.parse_args()
 
 CHROME_DRIVER_PATH = args.chrome_driver_path  # use your chrome driver path
+INPUT_FILE_PATH =args.input_file_path
+bar = tqdm(total=args.sample_size)
 
 #%%
 logger = logging.getLogger()
@@ -40,15 +44,19 @@ def crawl_detail(details, offset, limit):
     driver = webdriver.Chrome(CHROME_DRIVER_PATH, options=opts)
     for i in range(offset, offset + limit if offset + limit < len(details) else len(details)):
         url = details[i]['Product Link']
-        logger.info(f'Working on {url=}, {i=}')
+        logger.info(f'{i=}')
+        # Get detail page of product
         driver.get(url)
-        time.sleep(5)
+        time.sleep(10)
+        # Parse with BeautifulSoup
         detail_soup = BeautifulSoup(driver.page_source, 'html.parser')
         price_tag = detail_soup.find('a', {'class': "group bg-lm-darkOrange hover:bg-lm-darkBlue rounded-md text-white text-center cursor-pointer flex xl:flex-col xl:h-24"})
+        # Get price
         if price_tag:
             p1 = price_tag.find('span').text
-            p2 = price_tag.find('sup').tet
-            details[i]['Detail price'] = f'{p1}.{p2}'
+            details[i]['Detail price'] = f'{p1}'
+        
+        # Get product features (label and info)
         for div in detail_soup.find_all('div', {'class': 'lm-gpu-model'}):
             details[i][div.find('ul').find('li').text] = div.find('ul').find('li').find_next('li').text
         feature_label = detail_soup.find('li', {'class': 'font-bold w-max'}, text='Features')
@@ -57,21 +65,24 @@ def crawl_detail(details, offset, limit):
         container = feature_label.parent.parent
         for ul in container.find_all('ul'):
             details[i][ul.find('li').text] = ul.find('li').find_next('li').text
-        logger.info(f'Done {url=}, {i=}')
-    logger.info(f'Done {offset=}, {limit=}')
+        # update progress
+        bar.update(1)
     driver.quit()
 
+#%%
 #%%
 
 if __name__ == '__main__':
     
-    df = pd.read_csv('laptop_basic.csv')
+    df = pd.read_csv(INPUT_FILE_PATH)
     # convert df to dictionary
     details = df.to_dict('records')
+    number_of_threads = args.number_of_threads
 
     sample_size = args.sample_size
-    if sample_size != 10000:
-        number_of_threads = args.number_of_threads
+    
+    # If sample size <= 100, there is no need for caching
+    if sample_size <= 100:
         limit_each_thread = sample_size // number_of_threads
         limit_first_thread = limit_each_thread + sample_size % number_of_threads
         threads = []
@@ -85,32 +96,45 @@ if __name__ == '__main__':
         for t in threads:
             t.join()
         df = pd.DataFrame(details[:sample_size])
-        df.to_csv(f'laptop_detail_{sample_size}_sample.csv')
+        df.to_csv(f'raw/laptop_detail_{sample_size}_sample.csv')
     
+    # sample size too much, use caching for resumeable crawling
     else: 
         if not os.path.exists('.crawl_cache'):
             os.mkdir('.crawl_cache')
-
+        
+        # Split sample size into 100 parts
+        limit_each_part = sample_size // 100
+        # For each part, assign number of sample to each thread
+        limit_each_thread = limit_each_part // number_of_threads
+        
         for part in range(100):
+            # if one part is already crawled, skip it
             if os.path.exists(f'.crawl_cache/{part}.csv'):
                 continue
-            number_of_threads = args.number_of_threads
             threads = []
             for i in range(number_of_threads):
-                # modify offset and limit if change number_of_threads
-                # a part must working on 100 item, so for example if you change number_of_thread to 5, the offset must change to i*20, and limit = 20
-                t = Thread(target=crawl_detail, args=(details, part*100 + i*5, 5)) 
+                # each thread only crawl limit_each_thread samples, start from offset = current part number * limit_each_part + current thread number * limit_each_thread
+                t = Thread(target=crawl_detail, args=(details, part*limit_each_part + i*limit_each_thread, limit_each_thread)) 
                 t.start()
                 threads.append(t)
             for t in threads:
                 t.join()
-            part_data = pd.DataFrame(details[part*100:part*100 + 100])
+            
+            # after done crawling for one part, save it to csv
+            part_data = pd.DataFrame(details[part*limit_each_part:part*limit_each_part+ limit_each_part])
             part_data.to_csv(f'.crawl_cache/{part}.csv')
 
+        # after done crawling all parts, merge them into one csv
         csvs = os.listdir('.crawl_cache')
         csvs.sort(key=lambda x: int(x.split('.')[0]))
         csvs = list(map(lambda x: os.path.join('.','.crawl_cache', x), csvs))
         df = pd.read_csv(csvs[0])
         for file in csvs[1:]:
             df = pd.concat([df, pd.read_csv(file)])
-        df.to_csv('laptop_detail.csv')
+        df.to_csv('raw/laptop_detail.csv')
+
+
+print("Crawl Detail Done")
+# print df size
+print("Data shape:", df.shape)

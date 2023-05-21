@@ -39,7 +39,7 @@ for tr in tbody.find_all(
 
 
 driver.quit()
-df.to_csv('gpuben.csv', index=False)
-print("Done")
+df.to_csv('raw/gpuben.csv', index=False)
+print("Crawl GPU Done")
 # print df size
-print(df.shape)
+print("Data shape:", df.shape)
