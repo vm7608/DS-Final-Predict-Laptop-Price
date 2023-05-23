@@ -1,0 +1,31 @@
+Product Name,Product Link,Processor,Internal memory,Video card,Display,Solid-state drive,Price
+Lenovo ThinkPad X1 Carbon Gen 10,https://laptopmedia.com/laptop-specs/lenovo-thinkpad-x1-carbon-gen-10-22/,Intel Core i7-1265U,16GB RAM,Intel Iris Xe Graphics G7 (96EU),"14.0”, WUXGA (1920 x 1200), IPS",512GB SSD,$254887
+Dell Latitude 7530,https://laptopmedia.com/laptop-specs/dell-latitude-7530-10/,Intel Core i7-1270P,16GB RAM,Intel Iris Xe Graphics G7 (96EU),"15.6”, Full HD (1920 x 1080), IPS",512GB SSD,$168500
+HP Victus 15,https://laptopmedia.com/laptop-specs/hp-victus-15-133/,Intel Core i5-12450H,8GB RAM,"NVIDIA GeForce GTX 1650 (Laptop, 50W)","15.6”, Full HD (1920 x 1080), 144 Hz, IPS",512GB SSD,$69900
+Lenovo IdeaPad Gaming 3i 15,https://laptopmedia.com/laptop-specs/lenovo-ideapad-gaming-3i-15-152/,Intel Core i5-11300H,16GB RAM,NVIDIA GeForce GTX 1650 (Laptop),"15.6”, Full HD (1920 x 1080), IPS",1000GB SSD,$76998
+Dell Latitude 5320 2-in-1,https://laptopmedia.com/laptop-specs/dell-latitude-5320-2-in-1-23/,Intel Core i7-1185G7,16GB RAM,Intel Iris Xe Graphics G7 (96EU),"13.3”, Full HD (1920 x 1080), IPS",256GB SSD,$89500
+HP ZBook Studio G5,https://laptopmedia.com/laptop-specs/hp-zbook-studio-g5-191/,Intel Core i9-8950HK,32GB RAM,Intel UHD Graphics 630,"15.6”, Full HD (1920 x 1080), IPS",512GB SSD,$287999
+Lenovo ThinkBook 13s Gen 4,https://laptopmedia.com/laptop-specs/lenovo-thinkbook-13s-gen-4-5/,AMD Ryzen 5 6600U,8GB RAM,AMD Radeon 660M,"13.3”, WUXGA (1920 x 1200), IPS",256GB SSD,$69995
+Dell G5 5511,https://laptopmedia.com/laptop-specs/dell-g5-5511-32/,Intel Core i5-11400H,8GB RAM,"NVIDIA GeForce RTX 3050 (Laptop, 95W)","15.6”, Full HD (1920 x 1080), 120 Hz, IPS",1000GB SSD,$119999
+ASUS ROG Strix G17,https://laptopmedia.com/laptop-specs/asus-rog-strix-g17-16/,AMD Ryzen 7 4800H,64GB RAM,"NVIDIA GeForce RTX 3060 (Laptop, 130W)","17.3”, Full HD (1920 x 1080), 144 Hz, IPS",1000GB SSD,$207399
+Lenovo ThinkPad T470,https://laptopmedia.com/laptop-specs/lenovo-thinkpad-t470-30/,Intel Core i7-7500U,8GB RAM,Intel HD Graphics 620,"14.0”, HD (1366 x 768), TN",256GB SSD,$149995
+Lenovo IdeaPad Slim 1 14,https://laptopmedia.com/laptop-specs/lenovo-ideapad-slim-1-14/,AMD A6-9220e,4GB RAM,AMD Radeon R4,"14.0”, HD (1366 x 768), TN",64GB SSD,$27500
+Dell Inspiron 5625,https://laptopmedia.com/laptop-specs/dell-inspiron-5625-91/,AMD Ryzen 5 5625U,32GB RAM,"AMD Radeon RX Vega 7 (R4000/5000, 15W)","16.0”, WUXGA (1920 x 1200), IPS",1000GB SSD,$99900
+HP 15,https://laptopmedia.com/laptop-specs/hp-15-14649/,Intel Core i7-1165G7,32GB RAM,Intel Iris Xe Graphics G7 (96EU),"15.6”, HD (1366 x 768), TN",512GB SSD,$113499
+Lenovo IdeaPad 3 15,https://laptopmedia.com/laptop-specs/lenovo-ideapad-3-15-4300/,AMD Ryzen 5 5625U,12GB RAM,"AMD Radeon RX Vega 7 (R4000/5000, 15W)","15.6”, Full HD (1920 x 1080), IPS",256GB SSD,$68888
+HP 17,https://laptopmedia.com/laptop-specs/hp-17-15344/,Intel Core i5-1135G7,8GB RAM,Intel Iris Xe Graphics G7 (80EU),"17.3”, HD+ (1600 x 900), TN",256GB SSD,$111500
+ASUS VivoBook 16X,https://laptopmedia.com/laptop-specs/asus-vivobook-16x-169/,Intel Core i7-12700H,24GB RAM,Intel Iris Xe Graphics G7 (96EU),"16.0”, WQUXGA (3840 x 2400), OLED",8000GB SSD,$334999
+HP 15,https://laptopmedia.com/laptop-specs/hp-15-14854/,AMD Ryzen 5 5500U,32GB RAM,"AMD Radeon RX Vega 7 (R4000/5000, 15W)","15.6”, Full HD (1920 x 1080), IPS",2000GB SSD,$196900
+Dell Latitude 5520,https://laptopmedia.com/laptop-specs/dell-latitude-5520-360/,Intel Core i5-1145G7,32GB RAM,Intel Iris Xe Graphics G7 (80EU),"15.6”, Full HD (1920 x 1080), IPS",1000GB SSD,$109000
+HP 15,https://laptopmedia.com/laptop-specs/hp-15-14779/,Intel Core i5-1235U,16GB RAM,Intel Iris Xe Graphics G7 (80EU),"15.6”, Full HD (1920 x 1080), IPS",512GB SSD,$81499
+MSI Katana GF76,https://laptopmedia.com/laptop-specs/msi-katana-gf76-392/,Intel Core i7-12700H,64GB RAM,"NVIDIA GeForce RTX 3060 (Laptop, 105W)","17.3”, Full HD (1920 x 1080), 144 Hz, IPS",1000GB SSD,$210400
+MSI Delta 15,https://laptopmedia.com/laptop-specs/msi-delta-15-271/,AMD Ryzen 7 5800H,16GB RAM,AMD Radeon RX 6700M,"15.6”, Full HD (1920 x 1080), 240 Hz, IPS",2000GB SSD,$278000
+GIGABYTE AERO 16,https://laptopmedia.com/laptop-specs/gigabyte-aero-16-175/,Intel Core i7-12700H,16GB RAM,NVIDIA GeForce RTX 3070 Ti (Laptop),"16.0”, WQUXGA (3840 x 2400), OLED",2000GB SSD,$241900
+Acer Predator Helios 300,https://laptopmedia.com/laptop-specs/acer-predator-helios-300-1465/,Intel Core i7-12700H,32GB RAM,"NVIDIA GeForce RTX 3060 (Laptop, 140W)","15.6"", Full HD (1920 x 1080), 165 Hz, IPS",2000GB SSD,$195900
+Dell Inspiron 5425,https://laptopmedia.com/laptop-specs/dell-inspiron-5425-62/,AMD Ryzen 5 5625U,64GB RAM,"AMD Radeon RX Vega 7 (R4000/5000, 15W)","14.0"", FHD+ (1920 x 1200), IPS",2000GB SSD,$134999
+Dell Inspiron 3511,https://laptopmedia.com/laptop-specs/dell-inspiron-3511-1746/,Intel Core i7-1165G7,16GB RAM,Intel Iris Xe Graphics G7 (96EU),"15.6”, Full HD (1920 x 1080), IPS",512GB SSD,$94999
+HP 15,https://laptopmedia.com/laptop-specs/hp-15-14180/,Intel Core i5-1155G7,32GB RAM,Intel Iris Xe Graphics G7 (80EU),"15.6”, HD (1366 x 768), TN",512GB SSD,$88999
+ASUS ROG Strix SCAR 15,https://laptopmedia.com/laptop-specs/asus-rog-strix-scar-15-731/,AMD Ryzen 9 5900HX,64GB RAM,"NVIDIA GeForce RTX 3080 (Laptop, 130W)","15.6”, Full HD (1920 x 1080), 300 Hz, IPS",4000GB SSD,$259999
+Acer Aspire 5,https://laptopmedia.com/laptop-specs/acer-aspire-5-3266/,Intel Core i7-1260P,16GB RAM,NVIDIA GeForce RTX 2050 (35W),"15.6”, Full HD (1920 x 1080), IPS",1000GB SSD,$111999
+Lenovo IdeaPad 3i 15,https://laptopmedia.com/laptop-specs/lenovo-ideapad-3i-14-388/,Intel Core i5-1235U,12GB RAM,Intel Iris Xe Graphics G7 (80EU),"15.6”, Full HD (1920 x 1080), IPS",256GB SSD,$69900
+Razer Blade 15 Studio Edition,https://laptopmedia.com/laptop-specs/razer-blade-15-studio-edition-6/,Intel Core i7-10875H,32GB RAM,"NVIDIA Quadro RTX 5000 (16GB GDDR6, Laptop)","15.6”, 4K UHD (3840 x 2160), OLED",1000GB SSD,$450998

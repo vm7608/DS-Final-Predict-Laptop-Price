@@ -1,4 +1,4 @@
-price,brand,ram,ram_type,display_size,display_type,resolution,screen_rate,screen_panel,length,width,height,cpu_brand,gpu_brand,ssd,os,weight,cpu_point,gpu_point,features
+price,brand,ram,ram_type,display_size,display_type,resolution,screen_rate,screen_panel,length,width,thickness,cpu_brand,gpu_brand,ssd,os,weight,cpu_point,gpu_point,features
 3629.0,ASUS,64.0,DDR5,15.6,FHD,1920 x 1080,144.0,IPS,354.0,251.0,19.9,INTEL,NVIDIA,2000.0,WINDOWS,2.0,13001.0,,FINGERPRINT READER
 3049.99,LENOVO,64.0,DDR5,15.6,QHD,2560 x 1440,165.0,IPS,358.8,262.35,19.99,INTEL,NVIDIA,2000.0,WINDOWS,2.4,15486.0,8841.0,FINGERPRINT READER
 1819.0,ACER,32.0,DDR5,15.6,FHD,1920 x 1080,144.0,IPS,360.4,271.1,25.9,INTEL,NVIDIA,2000.0,WINDOWS,2.5,15486.0,8864.0,FINGERPRINT READER
